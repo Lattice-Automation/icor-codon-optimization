@@ -20,6 +20,20 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | hPDF  | ** Human peptide deformylase (hPDF) is a target for cancer therapeutics. However, its expression is not very efficient in *E. coli.* This serves as a good target for benchmarks as past [studies](https://pubmed.ncbi.nlm.nih.gov/19825416/) have noted the valuable potential of codon optimization of this gene. |
 | PF3D7  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | PA  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| PIM1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| MAPKAPK5  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| LCK  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| FGFR4  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| FLT1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| AKT1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| RPS6KB1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| BRAF1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| PAK1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| PLK1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| MAPK1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| CSNK1A1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| NPR1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| GSK3B  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
