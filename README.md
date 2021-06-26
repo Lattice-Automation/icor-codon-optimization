@@ -18,4 +18,9 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | soxB   | ** Sarcosine oxidase subunit B (soxB) is an important diagnostic enzyme and can catalyze the oxidation of N-methyl with the FAD cofactor. ([Study](https://www.sciencedirect.com/science/article/pii/S0168165615301905?via%3Dihub)) found that the expression of recombinant SOX "has been extensively studied." Thus, the sox gene serves as a good benchmark because the extent to which codon optimization affects it has been studied. |
 | PRL-3/PTP4A3  | ** Protein tyrosine phosphatase 4A3 (PTP4A3/PRL-3) is a well-documented protein that can be produced recombinantly in *E. coli.* This protein has been identified as a potential target to treat some cancers. |
 | hPDF  | ** Human peptide deformylase (hPDF) is a target for cancer therapeutics. However, its expression is not very efficient in *E. coli.* This serves as a good target for benchmarks as past [studies](https://pubmed.ncbi.nlm.nih.gov/19825416/) have noted the valuable potential of codon optimization of this gene. |
+| PF3D7  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| PA  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
