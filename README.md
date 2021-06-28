@@ -49,6 +49,6 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | OPRM1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | LEMD3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | CLN3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| LAMP1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| TAP1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| CAV1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
