@@ -35,6 +35,8 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | NPR1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | GSK3B  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
-| MmpL3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| EMG1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| UBTF  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| PDCD11  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| NOC2L  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| CEBPZ  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
