@@ -1,7 +1,7 @@
 # ICOR Codon Optimization Tool
 ---
 - [Benchmarking](#Benchmarking)
-    - [Sequences](#Benchmark%20Sequences)
+- [Scripts](#Scripts)
 ---
 ## Benchmarking
 
@@ -54,3 +54,9 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | LAMP1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | TAP1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | CAV1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+
+## Scripts
+The following is a description of the purpose for each script in the repository.
+
+`reformat_seqs.py`
+> Iterate through each file in a directory and reformat the sequence uniformly.
