@@ -40,3 +40,15 @@ Descriptions marked with "**" indicate genes that have been expressed in *E. col
 | PDCD11  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | NOC2L  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
 | CEBPZ  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| CDK1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| BIRC5  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| KIF11  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| NGFR  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| TAS2R10  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| OPRM1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| LEMD3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| CLN3  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
+| SMARCD1  | ** Mycobacterial membrane protein Large 3 (MmpL3) is a  |
