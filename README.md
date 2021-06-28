@@ -6,7 +6,9 @@
 ## Benchmarking
 
 ### Benchmark Sequences
-`benchmark_seqs_dna` contains `x` DNA sequences in the FASTA format for benchmarking. `benchmark_seqs_aa` contains `x` AA sequences that correspond to the DNA sequence folder. Below is a table depicting the importance of each file.
+`benchmark_sequences` is a folder that contains sequences for benchmarking purposes:
+- `aa` which consists of 40 amino acid sequences in the FASTA format.
+- `dna` which consists of 40 DNA sequences in the FASTA format.
 
 Descriptions marked with "**" indicate genes that have been expressed in *E. coli* in past studies. The codon optimization tool has been trained on *E. coli genes*. Therefore, it is best applied to improve expression for genes that would be expressed by using *E. coli* as a cell factory. *E. coli* is the ideal cell host for recombinant expression because of its efficiency and low-cost.
 
