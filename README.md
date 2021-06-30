@@ -116,3 +116,4 @@ The following is a description of the purpose for each summary in the summaries 
 - [AA -> Codons dict](https://www.mathworks.com/help/bioinfo/ref/aa2nt.html)
 - selenium
     - Chrome (chromedriver does not seem to work for chromium, needs to use an actual chrome installation)
+- web_driver
