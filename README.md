@@ -107,6 +107,7 @@ The following is a description of the purpose for each summary in the summaries 
 > Contains an overview of the benchmarks, comparing each of the "tools" for each of the benchmarks. This is the sheet to look at if you would like to be able to see the metrics differences between the tools.
 
 ## Resources
+- Python 3.9.4
 - biopython
 - numpy
 - [AA -> Codons dict](https://www.mathworks.com/help/bioinfo/ref/aa2nt.html)
