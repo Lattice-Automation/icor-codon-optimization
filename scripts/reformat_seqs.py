@@ -5,6 +5,7 @@
 
 import os
 from Bio import SeqIO
+import random
 
 aa_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 dna_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\dna"
@@ -18,8 +19,11 @@ for entry in os.scandir(aa_directory):
 
 for entry in os.scandir(dna_directory):
     record = SeqIO.read(entry, "fasta")
+
+    #Just in case, replace ambigious codons with the corresponding IUPAC ones:
+    record.seq = record.seq.replace('K',random.choice(['G','T'])).replace('M',random.choice(['A','C'])).replace('N',random.choice(['A','C','G','T'])).replace('R',random.choice(['A','G'])).replace('W',random.choice(['A','T'])).replace('Y',random.choice(['C','T']))
+    
     num = len(record.seq) % 3
-    print(num)
     if (num == 0):
         SeqIO.write(record, entry, "fasta")
     else:

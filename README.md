@@ -71,3 +71,9 @@ The following is a description of the purpose for each script in the repository.
 - CFD (known un-optimized gene that reduces efficiency)
 - Negative CIS elements
 - Negative repeat elements
+
+## Libraries/Resources Used:
+- biopython
+- numpy
+- [AA -> Codons dict](https://www.mathworks.com/help/bioinfo/ref/aa2nt.html)
+- selenium
