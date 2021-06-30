@@ -60,3 +60,14 @@ The following is a description of the purpose for each script in the repository.
 
 `reformat_seqs.py`
 > Iterate through each file in a directory and reformat the sequence uniformly.
+
+`naively_optimize.py`
+> Naively optimizes a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory.
+
+`benchmark_seqs.ipynb`
+> An interactive notebook that helps benchmark a directory containing FASTA sequences across the following metrics:
+- Codon Adaptation Index (CAI)
+- GC Content
+- CFD (known un-optimized gene that reduces efficiency)
+- Negative CIS elements
+- Negative repeat elements

@@ -6,13 +6,22 @@
 import os
 from Bio import SeqIO
 
-#directory = 'benchmark_seqs/dna'
-directory = 'benchmark_seqs/aa'
+aa_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
+dna_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\dna"
 
-numFiles = len(os.listdir(directory))
-print("There are %d files in this directory." % numFiles)
+print("There are %d files in the amino acid directory." % len(os.listdir(aa_directory)))
+print("There are %d files in the DNA directory." % len(os.listdir(dna_directory)))
 
-for entry in os.scandir(directory):
+for entry in os.scandir(aa_directory):
     record = SeqIO.read(entry, "fasta")
-    record.sequence = record.seq
     SeqIO.write(record, entry, "fasta")
+
+for entry in os.scandir(dna_directory):
+    record = SeqIO.read(entry, "fasta")
+    num = len(record.seq) % 3
+    print(num)
+    if (num == 0):
+        SeqIO.write(record, entry, "fasta")
+    else:
+        record.seq = record.seq[:-num]
+        SeqIO.write(record, entry, "fasta")
