@@ -72,7 +72,7 @@ The following is a description of the purpose for each script in the repository.
 > Super naive optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It randomly selects a codon given an amino acid, making it a very naive approach.
 
 `naive_optimizer.py`
-> Naive optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It selects codons to match the natural frequency that occurs within E. coli. This is what many tools in the industry use as well.
+> Naive optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It selects codons to match the natural frequency that occurs within E. coli. This is what many tools in the industry use as well. This tool/script is built upon the `ecoli_codon_frequencies.csv` file in the summaries directory.
 
 `run_benchmark.ipynb`
 > An interactive notebook that helps benchmark a directory containing FASTA sequences across the following metrics:
@@ -105,6 +105,9 @@ The following is a description of the purpose for each summary in the summaries 
 
 `benchmarks_overview.xlsx`
 > Contains an overview of the benchmarks, comparing each of the "tools" for each of the benchmarks. This is the sheet to look at if you would like to be able to see the metrics differences between the tools.
+
+`ecoli_codon_frequencies.xlsx`
+> Contains the codon frequencies found in E. coli for each amino acid. The naive tool was built upon these frequencies.
 
 ## Resources
 - Python 3.9.4
