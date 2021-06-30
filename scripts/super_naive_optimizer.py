@@ -10,7 +10,7 @@ from Bio.Seq import Seq
 aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 
 # Output dir to store optimized seqs:
-out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\naive_optimizations"
+out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\super_naive"
 
 # Amino acid to codon table, outputs arr of codons:
 def aa2codons(seq : str) -> list:
