@@ -51,4 +51,4 @@ for entry in os.scandir(aa_dir):
 
     record.seq = Seq(re.sub('[^GATC]',"",str("".join(arr)).upper()))
     complete_name = os.path.join(out_dir, name)
-    SeqIO.write(record, complete_name, "fasta")
+    SeqIO.write(record, complete_name + ".fasta", "fasta")

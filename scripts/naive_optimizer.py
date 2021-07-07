@@ -32,10 +32,10 @@ frequency = {
 }
 
 # Amino acid sequence dir to optimize:
-aa_dir = r"/workspace/icor-codon-optimization/benchmark_sequences/aa"
+aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 
 # Output dir to store optimized seqs:
-out_dir = r"/workspace/icor-codon-optimization/benchmark_sequences/naive"
+out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\naive"
 
 
 # Normalize probabilities for frequency if sum is not exactly 1.
@@ -57,4 +57,4 @@ for entry in os.scandir(aa_dir):
     
     record.seq = Seq(re.sub('[^GATC]',"",str("".join(seq_arr)).upper()))
     complete_name = os.path.join(out_dir, name)
-    SeqIO.write(record, complete_name, "fasta")
+    SeqIO.write(record, complete_name + ".fasta", "fasta")

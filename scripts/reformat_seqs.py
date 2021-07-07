@@ -24,8 +24,4 @@ for entry in os.scandir(dna_directory):
     record.seq = record.seq.replace('K',random.choice(['G','T'])).replace('M',random.choice(['A','C'])).replace('N',random.choice(['A','C','G','T'])).replace('R',random.choice(['A','G'])).replace('W',random.choice(['A','T'])).replace('Y',random.choice(['C','T']))
     
     num = len(record.seq) % 3
-    if (num == 0):
-        SeqIO.write(record, entry, "fasta")
-    else:
-        record.seq = record.seq[:-num]
-        SeqIO.write(record, entry, "fasta")
+    print(num)
