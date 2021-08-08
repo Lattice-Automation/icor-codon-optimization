@@ -1,3 +1,4 @@
+#import standard modules; re is used for regex on ln 59
 import os
 from Bio import SeqIO
 from Bio.Seq import Seq
