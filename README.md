@@ -2,9 +2,13 @@
   <img src="/assets/icor-flat-small.png">
 </p>
 
+<p align="center">
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5173008.svg)](https://doi.org/10.5281/zenodo.5173008)
 [![LICENSE](https://img.shields.io/badge/license-none%20(yet)-brightgreen)](https://github.com/Lattice-Automation/icor-codon-optimization/blob/master/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Lattice-Automation/icor-codon-optimization)
+
+</p>
 
 <h3 align="center"> ICOR: Improving Codon Optimization with Recurrent neural networks <h4>
 
@@ -49,12 +53,10 @@ The ICOR tool has been divided into four directories: models, optimizers, resour
 #### Models
 The models directory contains the trained ICOR model in the [ONNX](https://onnx.ai) (open-neural-network-exchange) format. Below is a preview of the model architecture:
 
-<p align="right">
-  <img src="/assets/icor-small-visualization.png">
-</p>
-<p align="left">
-    The ICOR model was trained in the MATLAB environment. For more details on model architecture, please review our manuscript file in the base of the repository. Upon submission, this will be changed to a DOI/biorxiv link.
-</p>
+<div style="text-align: right">
+<img src="/assets/icor-small-visualization.png">
+The ICOR model was trained in the MATLAB environment. For more details on model architecture, please review our manuscript file in the base of the repository. Upon submission, this will be changed to a DOI/biorxiv link.
+</div>
 
 
 `benchmark_genes.pdf`
