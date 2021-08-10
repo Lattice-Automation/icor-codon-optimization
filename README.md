@@ -6,7 +6,7 @@
 [![LICENSE](https://img.shields.io/badge/license-none%20(yet)-brightgreen)](https://github.com/Lattice-Automation/icor-codon-optimization/blob/master/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Lattice-Automation/icor-codon-optimization)
 
-ICOR: Improving Codon Optimization with Recurrent neural networks
+<h3 align="center"> ICOR: Improving Codon Optimization with Recurrent neural networks <h4>
 
 ---
 - [About](#About)
@@ -44,7 +44,7 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 - `super_naive`  consists of 40 DNA sequences optimized by the super naive optimizer.
 
 ### Tool
-The ICOR tool has been divided into four directories.
+The ICOR tool has been divided into four directories: models, optimizers, resources, and scripts. At the base of the directory sits the `run_icor.ipynb` file: an interactive notebook to optimize a sequence utilizing the trained ICOR model. Supporting files were used to train, evaluate, and test the ICOR model. Descriptions for these can be found below:
 
 #### Models
 The models directory contains the trained ICOR model in the [ONNX](https://onnx.ai) (open-neural-network-exchange) format. Below is a preview of the model architecture:
