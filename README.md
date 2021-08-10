@@ -10,7 +10,10 @@ ICOR: Improving Codon Optimization with Recurrent neural networks
 
 ---
 - [About](#About)
+    - [Assets](#Assets)
+    - [Benchmark Results](#Benchmark-Results)
     - [Benchmark Sequences](#Benchmark-Sequences)
+    - [ICOR Tool](#Tool)
 - [Scripts](#Scripts)
 - [Summaries](#Summaries)
 - [Resources](#Resources)
@@ -19,12 +22,40 @@ ICOR: Improving Codon Optimization with Recurrent neural networks
 ## About
 In protein sequences—as there are 61 sense codons but only 20 standard amino acids—most amino acids are encoded by more than one codon. Although such synonymous codons do not alter the encoded amino acid sequence, their selection can dramatically affect the production of the resulting protein. Codon optimization of synthetic DNA sequences for maximum expression is an important segment of heterologous expression. However, existing solutions are primarily based on choosing high-frequency codons only, neglecting the important effects of rare codons. In this paper, we propose a novel recurrent-neural-network (RNN) based codon optimization tool, ICOR, that aims to learn codon usage bias on a genomic dataset of Escherichia coli. We compile a dataset of over 42,000 non-redundant, robust genes that are used for deep learning. The model uses a bidirectional long short-term memory-based architecture, allowing for the sequential information of genes to be learnt. Our tool can predict synonymous codons for synthetic genes towards optimal expression in E. coli. We demonstrate that sequential context achieved via RNN may yield codon selection that is more similar to the host genome, therefore improving protein expression more than frequency-based approaches. On a benchmark set of over 40 select DNA sequences, ICOR tool improved the codon adaptation index by 41.69% compared to the original sequence. Our resulting algorithm is provided as an open-source software package along with the benchmark set of sequences.
 
+### Assets
+Assets including images and branding for the ICOR tool, hosted on the [biotools by Lattice Automation](https://tools.latticeautomation.com/) website.
+
+### Benchmark Results
+`benchmark_results` is a folder that contains the following summaries, each in the CSV format:
+- `brute_benchmarks` which consists of the benchmark results for the brute force optimized sequences.
+- `icor_benchmarks` which consists of the benchmark results for the ICOR optimized sequences.
+- `naive_benchmarks` which consists of the benchmark results for the naively optimized sequences.
+- `original_benchmarks` which consists of the benchmark results for the original, unoptimized sequences.
+- `super_naive_benchmarks` which consists of the benchmark results for the super naively optimized sequences.
+
 ### Benchmark Sequences
-`benchmark_sequences` is a folder that contains sequences for benchmarking purposes:
-- `aa` which consists of 40 amino acid sequences in the FASTA format.
-- `dna` which consists of 40 DNA sequences in the FASTA format.
-- `super_naive`  consists of 40 DNA sequences in the FASTA format optimized by the super_naive script.
-- `naive` which consists of 40 DNA sequences in the FASTA format optimized by the naive script.
+`benchmark_sequences` is a folder that contains sequences for benchmarking purposes, each in the FASTA format:
+- `aa` which consists of the 40 original amino acid sequences.
+- `all_original` which consists of all 40 amino acid and DNA sequences compiled into one file.
+- `brute` which consists of 40 DNA sequences optimized by the brute force optimizer.
+- `dna` which consists of the 40 original DNA sequences.
+- `icor` which consists of 40 DNA sequences optimized by the ICOR optimizer.
+- `naive` which consists of 40 DNA sequences optimized by the naive optimizer.
+- `super_naive`  consists of 40 DNA sequences optimized by the super naive optimizer.
+
+### Tool
+The ICOR tool has been divided into four directories.
+
+#### Models
+The models directory contains the trained ICOR model in the [ONNX](https://onnx.ai) (open-neural-network-exchange) format. Below is a preview of the model architecture:
+
+<p align="right">
+  <img src="/assets/icor-small-visualization.png">
+</p>
+<p align="left">
+    The ICOR model was trained in the MATLAB environment. For more details on model architecture, please review our manuscript file in the base of the repository. Upon submission, this will be changed to a DOI/biorxiv link.
+</p>
+
 
 `benchmark_genes.pdf`
 > A document that contains all of the benchmarking genes and descriptions of them.
