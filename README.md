@@ -1,8 +1,10 @@
 <p align="center">
-  <img src="/assets/icor-flat-banner.png">
+  <img src="/assets/icor-flat-small.png">
 </p>
+
 # ICOR: Improving Codon Optimization with Recurrent neural networks
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5173008.svg)](https://doi.org/10.5281/zenodo.5173008)
+
 ---
 - [Benchmarking](#Benchmarking)
 - [Scripts](#Scripts)
