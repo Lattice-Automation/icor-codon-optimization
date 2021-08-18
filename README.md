@@ -36,6 +36,7 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 - `naive_benchmarks` which consists of the benchmark results for the naively optimized sequences.
 - `original_benchmarks` which consists of the benchmark results for the original, unoptimized sequences.
 - `super_naive_benchmarks` which consists of the benchmark results for the super naively optimized sequences.
+- `genscript_benchmarks` which consists of the 
 
 ### Benchmark Sequences
 `benchmark_sequences` is a folder that contains sequences for benchmarking purposes, each in the FASTA format:
@@ -46,6 +47,7 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 - `icor` which consists of 40 DNA sequences optimized by the ICOR optimizer.
 - `naive` which consists of 40 DNA sequences optimized by the naive optimizer.
 - `super_naive`  consists of 40 DNA sequences optimized by the super naive optimizer.
+- `genscript` consists of 40 DNA sequences optimized by the Genscript Gensmart tool.
 
 ### Tool
 The ICOR tool has been divided into four directories: models, optimizers, resources, and scripts. At the base of the directory sits the `run_icor.ipynb` file: an interactive notebook to optimize a sequence utilizing the trained ICOR model. Supporting files were used to train, evaluate, and test the ICOR model. Descriptions for these can be found below:
