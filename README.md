@@ -111,11 +111,13 @@ The following is a description of the purpose for each summary in the summaries 
 `ecoli_codon_frequencies.xlsx`
 > Contains the codon frequencies found in E. coli for each amino acid. The naive tool was built upon these frequencies.
 
-## Resources
+## Dependencies
 - Python 3.9.4
-- biopython
-- numpy
-- [AA -> Codons dict](https://www.mathworks.com/help/bioinfo/ref/aa2nt.html)
-- selenium
+  - biopython
+  - numpy
+  - web_driver
+  - onnxruntime
+  - re
+  - selenium
     - Chrome (chromedriver does not seem to work for chromium, needs to use an actual chrome installation)
-- web_driver
+- [AA -> Codons dict](https://www.mathworks.com/help/bioinfo/ref/aa2nt.html)
