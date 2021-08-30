@@ -54,8 +54,6 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 ### Tool
 The ICOR tool has been divided into four directories: models, optimizers, resources, and scripts. In the `/tool/optimizers` directory sits the `icor_optimizer.py` file: an interactive script to optimize a sequence utilizing the trained ICOR model.
 
-> Note as of 8/24/2021, this ICOR optimizer Python script has a bug, although it works, it does not output the correct sequence. The other script "run_icor_from_mat" does work and outputs the correct sequence given an input of a .mat file. However, a user would be inputting either a FASTA file or pasting in a sequence. This script currently accepts the pasted sequence, but the optimizer portion is not working as expected. It outputs a sequence but it is not correct. Since the same model was being inferenced in the run_icor_from_mat script, I have isolated that this issue is not because of the model file. It is because of the encoding done in this script. I have 1-2 things that I still need to try which I believe will solve this issue.
-
 Supporting files were used to train, evaluate, and test the ICOR model. Descriptions for these can be found below:
 
 #### Models
@@ -100,10 +98,6 @@ The following is a description of the purpose for each script in the repository.
 - Negative CIS elements
 - Negative repeat elements
   
-`run_icor_from_mat.ipynb`
-> A notebook that accepts a `.mat` file that contains one variable called "XTrain" of the cell array type. Cell array used in experiments was of value/shape 42266x1.
-> Note: as of 8/24/2021 this script successfully outputs the ICOR optimized sequence and it does indeed match the correct ICOR optimization.
-
 #### Resources
 The following is a description of the purpose for each resource in the resources folder.
 
