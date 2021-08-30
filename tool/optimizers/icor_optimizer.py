@@ -78,7 +78,7 @@ aa_placement = aa2int(input_seq)
 # One-hot encode the amino acid sequence:
 i = 0
 while i < len(aa_placement):
-    oh_array[aa_placement[i]-1, i] = 1
+    oh_array[aa_placement[i], i] = 1
     i += 1
 
 oh_array = [oh_array]
