@@ -9,6 +9,7 @@ from Bio import SeqIO
 import random
 
 # Change this to the directory where your files are stored.
+# hardcoded path
 aa_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 dna_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\dna"
 
@@ -32,5 +33,6 @@ for entry in os.scandir(dna_directory):
     #if there are sequences that are not divisible by three, then truncate them:
     num = len(record.seq) % 3
     print("Warning: truncated" + entry.name + num)
+    # I'd suggest checking for this explicitly in your code and showing the user this warning/error
     #warning: if sequences are being truncated, they are likely not formatted correctly.
     #all CDS should be divisible by three because they are all in frame.

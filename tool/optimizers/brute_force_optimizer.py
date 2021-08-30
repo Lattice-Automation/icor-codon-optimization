@@ -3,6 +3,7 @@ Generates a sequence of codons and then iterates through the sequence, constantl
 Goal of this is to find a combination of codons to maximize CAI (achieve 1.0 CAI).
 '''
 
+# Shouldn't hardcode profiling code, pass a flag to turn on profiling
 import timeit
 
 start = timeit.default_timer()
@@ -18,6 +19,9 @@ import math
 import re
 
 # Set input AA sequence directory and output for writing brute sequences
+# Shouldn't hard code these - should be relative paths like "../../benchmark_sequences/aa"
+# Also, I think most scientists will be using UNIX-like OSes.
+# I'm not super familiar with it, but have you tried running this in WSL to check for compatibility?
 aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\brute"
 
@@ -129,13 +133,18 @@ def aa2codons(seq : str) -> list:
 # Converts an amino acid to a random corresponding codon:
 for entry in os.scandir(aa_dir):
     # Read in the amino acid sequence:
+
+    # I'm guessing this is to strip the _aa.fasta, perhaps replace it with something like
+    # name = entry.replace("_aa.fasta", "_dna")
+    # to be more explicit
     name = entry.name[0:-9] + "_dna"
     record = SeqIO.read(entry,'fasta')
     masterlist = []
     bestcai = 0
     curcai = 0
     z = 0
-    while (z < 100000):
+    # What's the significance of 100000? Could we give it a descriptive name?
+    while z < 100000:
         codonarr = []
         # Convert amino acid to codons:
         for i in record.seq:
@@ -150,6 +159,13 @@ for entry in os.scandir(aa_dir):
             print('new best cai ' + str(cai))
         z += 1
         print(z)
+
+    # ⬆
+    # Style nit, but it would be more pythonic to write
+    # TOTAL_ITERATIONS = 100000
+    # for curr_iteration in range(0, TOTAL_ITERATIONS):
+    #    ...
+
     # Write the codon array to a file:
     record.seq = Seq(re.sub('[^GATC]',"",str("".join(masterlist[bestcai])).upper()))
     complete_name = os.path.join(out_dir, name)

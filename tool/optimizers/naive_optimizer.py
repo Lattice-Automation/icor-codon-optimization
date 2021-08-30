@@ -33,9 +33,11 @@ frequency = {
 }
 
 # Amino acid sequence dir to optimize:
+# hardcoded path
 aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 
 # Output dir to store optimized seqs:
+# hardcoded path
 out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\naive"
 
 
@@ -49,6 +51,7 @@ for entry in os.scandir(aa_dir):
     name = entry.name[0:-9] + "_dna"
 
     # Replace ambiguities with amino acids from IUPAC guidelines.
+    # Might be nice to have a link to the guidelines?
     record = SeqIO.read(entry,"fasta")
     seq = record.seq.replace("B", random.choice(["D","N"])).replace("Z", random.choice(["E", "Q"]))
     seq_arr = []
