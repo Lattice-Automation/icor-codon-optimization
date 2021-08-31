@@ -67,7 +67,7 @@ The ICOR model was trained in the MATLAB environment. For more details on model 
 
 #### Optimizers
 `brute_force_optimizer.py`
-> Naive optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It generates 10,000 sequences and chooses the one with the highest CAI.
+> Brute force optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It generates 10,000 sequences and chooses the one with the highest CAI.
 
 `icor_optimizer.py`
 > ICOR optimizer outputs a text file given a sequence input of amino acids or DNA. It is an interactive Python command-line script. It runs an inference through the ICOR model.
