@@ -1,4 +1,5 @@
 # Define variables (must change!)
+# Good idea! - you can use relative paths as described in ./brute_force_optimizer.py
 model_path = r"C:\Users\risha\Desktop\icor-codon-optimization\tool\models\icor.onnx"
 
 # Import packages
@@ -7,10 +8,12 @@ from Bio.Seq import translate
 import sys
 import onnxruntime as rt
 import numpy as np
+from typing import List
 
 type = input("Welcome to ICOR! Are you optimizing an amino acid sequence (enter in 'aa' below) or a dna/codon sequence (enter in 'dna' below)?\n\n").strip().upper()
 input_seq = input(
     "Enter the coding sequence only.\nEnter in 'demo' to use demo sequence.\n\n").strip().upper()
+# 'type' is a builtin function in python - I'd recommend renaming the var to sequence_type to avoid reassigning it
 
 # Load demo sequence (AKT1 amino acid seq)
 if type == 'AA':
@@ -31,13 +34,18 @@ elif type == 'DNA':
     # ICOR accepts the amino acid sequence, so we translate the DNA sequence to amino acid sequence:
     input_seq = Seq(input_seq)
     input_seq = input_seq.translate()
+# It's good to handle all cases of your if/elif. Something like
+# else:
+#     sys.exit(f"Invalid sequence type {sequence_type}. Expected 'aa' or 'dna'")
+
 
 print(input_seq)
 # Define categorical labels from when model was trained.
 labels = ['AAA', 'AAC','AAG','AAT','ACA','ACG','ACT','AGC','ATA','ATC','ATG','ATT','CAA','CAC','CAG','CCG','CCT','CTA','CTC','CTG','CTT','GAA','GAT','GCA','GCC','GCG','GCT','GGA','GGC','GTC','GTG','GTT','TAA','TAT','TCA','TCG','TCT','TGG','TGT','TTA','TTC','TTG','TTT','ACC','CAT','CCA','CGG','CGT','GAC','GAG','GGT','AGT','GGG','GTA','TGC','CCC','CGA','CGC','TAC','TAG','TCC','AGA','AGG','TGA']
 
 # Define aa to integer table
-def aa2int(seq: str) -> list:
+# Your 'seq: str' type definition is broken by your reassignment of 'str' below
+def aa2int(seq: str) -> List[int]:
     _aa2int = {
         'A': 1,
         'R': 2,
@@ -77,6 +85,7 @@ aa_placement = aa2int(input_seq)
 
 # One-hot encode the amino acid sequence:
 i = 0
+# style nit: more pythonic to write for i in range(0, len(aa_placement)):
 while i < len(aa_placement):
     oh_array[aa_placement[i], i] = 1
     i += 1
@@ -100,7 +109,9 @@ pred_indices = []
 for pred in pred_onx[0]:
     pred_indices.append(np.argmax(pred))
 
-str = ""
+# Likewise, 'str' is a bultin type in python
+# I'd rename to 'output_str' or the like
+out_str = ""
 for index in pred_indices:
     str += labels[index]
 print('==== OUTPUT ====\n' + str)
@@ -114,3 +125,16 @@ if (output == 'Y'):
     print('\nOutput written to output.txt')
 else:
     print('\nNo output written. Done!')
+# should catch cases explicitly
+# like:
+# while True:
+#     if output == "Y":
+#         with open("output.txt", "w") as f:
+#         f.write(out_str)
+#         print("\nOutput written to output.txt")
+#         break
+#     elif output == "N":
+#         print("\nNo output written. Done!")
+#         break
+#     else:
+#         print("Error! Expected Y/N")

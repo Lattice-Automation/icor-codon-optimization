@@ -17,6 +17,7 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
 
 #output directory to write sequences
+# hardcoded path
 out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\genscript"
 
 #iterate through the csv file and write sequences to the output directory

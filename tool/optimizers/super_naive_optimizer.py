@@ -8,9 +8,11 @@ import re
 from Bio.Seq import Seq
 
 # Amino acid sequence dir to optimize:
+# hardcoded path
 aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
 
 # Output dir to store optimized seqs:
+# hardcoded path
 out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\super_naive"
 
 # Amino acid to codon table, outputs arr of codons:
