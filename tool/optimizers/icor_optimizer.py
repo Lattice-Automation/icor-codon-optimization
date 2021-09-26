@@ -87,7 +87,7 @@ aa_placement = aa2int(input_seq)
 i = 0
 # style nit: more pythonic to write for i in range(0, len(aa_placement)):
 while i < len(aa_placement):
-    oh_array[aa_placement[i]-1, i] = 1
+    oh_array[aa_placement[i], i] = 1
     i += 1
 
 oh_array = [oh_array]
