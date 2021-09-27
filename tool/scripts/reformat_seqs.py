@@ -8,10 +8,9 @@ import os
 from Bio import SeqIO
 import random
 
-# Change this to the directory where your files are stored.
-# hardcoded path
-aa_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
-dna_directory = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\dna"
+# Relative paths to stored benchmark files.
+aa_directory = r"..\..\benchmark_sequences\aa"
+dna_directory = r"..\..\benchmark_sequences\dna"
 
 # Print the number of files in each directory.
 print("There are %d files in the amino acid directory." % len(os.listdir(aa_directory)))
@@ -29,10 +28,10 @@ for entry in os.scandir(dna_directory):
 
     #Just in case, replace ambigious codons with the corresponding IUPAC ones:
     record.seq = record.seq.replace('K',random.choice(['G','T'])).replace('M',random.choice(['A','C'])).replace('N',random.choice(['A','C','G','T'])).replace('R',random.choice(['A','G'])).replace('W',random.choice(['A','T'])).replace('Y',random.choice(['C','T']))
-    
-    #if there are sequences that are not divisible by three, then truncate them:
-    num = len(record.seq) % 3
-    print("Warning: truncated" + entry.name + num)
-    # I'd suggest checking for this explicitly in your code and showing the user this warning/error
-    #warning: if sequences are being truncated, they are likely not formatted correctly.
-    #all CDS should be divisible by three because they are all in frame.
+    SeqIO.write(record, entry, "fasta")
+
+    if len(record.seq) % 3:
+        #all CDS should be divisible by three because they are all in frame.
+        print(f"Warning {entry.name} (sequence #{num}) was not divisible by three. All CDS should be divisible by three. The ICOR optimizer will perform best on sequences of that length."
+    else:
+        continue

@@ -34,11 +34,11 @@ frequency = {
 
 # Amino acid sequence dir to optimize:
 # hardcoded path
-aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
+aa_dir = r"..\..\benchmark_sequences\aa"
 
 # Output dir to store optimized seqs:
 # hardcoded path
-out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\naive"
+out_dir = r"..\..\benchmark_sequences\naive"
 
 
 # Normalize probabilities for frequency if sum is not exactly 1.
@@ -48,10 +48,9 @@ def fix_p( p):
     return p
 
 for entry in os.scandir(aa_dir):
-    name = entry.name[0:-9] + "_dna"
+    name = entry.replace("_aa.fasta", "_dna")
 
-    # Replace ambiguities with amino acids from IUPAC guidelines.
-    # Might be nice to have a link to the guidelines?
+    # Replace ambiguities with amino acids from IUPAC guidelines: https://www.bioinformatics.org/sms/iupac.html
     record = SeqIO.read(entry,"fasta")
     seq = record.seq.replace("B", random.choice(["D","N"])).replace("Z", random.choice(["E", "Q"]))
     seq_arr = []

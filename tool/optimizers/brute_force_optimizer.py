@@ -3,12 +3,6 @@ Generates a sequence of codons and then iterates through the sequence, constantl
 Goal of this is to find a combination of codons to maximize CAI (achieve 1.0 CAI).
 '''
 
-# Shouldn't hardcode profiling code, pass a flag to turn on profiling
-import timeit
-
-start = timeit.default_timer()
-
-
 # Import modules
 import os
 from Bio import SeqIO
@@ -19,11 +13,8 @@ import math
 import re
 
 # Set input AA sequence directory and output for writing brute sequences
-# Shouldn't hard code these - should be relative paths like "../../benchmark_sequences/aa"
-# Also, I think most scientists will be using UNIX-like OSes.
-# I'm not super familiar with it, but have you tried running this in WSL to check for compatibility?
-aa_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\aa"
-out_dir = r"C:\Users\risha\Desktop\icor-codon-optimization\benchmark_sequences\brute"
+aa_dir = r"..\..\benchmark_sequences\aa"
+out_dir = r"..\..\benchmark_sequences\brute"
 
 # Define weights for each codon
 weights = [0,1,0.647058823500000,0.500000000000000,0.794117647100000,0.0789473684200000,0.131578947400000,0.263157894700000,0.184210526300000,0.973684210500000,1,0.851851851900000,1,1,0.587301587300000,0.818181818200000,1,0.483870967700000,0.129032258100000,1,1,0.515151515200000,0.470588235300000,1,0.384615384600000,0.307692307700000,0.871794871800000,1,1,0.754385964900000,0.180000000000000,1,0.820000000000000,0.265306122400000,0.265306122400000,1,0.0816326530600000,0.224489795900000,0.204081632700000,0.333333333300000,1,1,1,0.754385964900000,1,0.392156862700000,0.333333333300000,0.235294117600000,0.576923076900000,1,0.576923076900000,0.500000000000000,0.615384615400000,0.576923076900000,0.619047619000000,0.357142857100000,0.428571428600000,1,1,1,0.724137931000000,1,0.444444444400000,0.750000000000000,0.583333333300000]
@@ -133,18 +124,15 @@ def aa2codons(seq : str) -> list:
 # Converts an amino acid to a random corresponding codon:
 for entry in os.scandir(aa_dir):
     # Read in the amino acid sequence:
-
-    # I'm guessing this is to strip the _aa.fasta, perhaps replace it with something like
-    # name = entry.replace("_aa.fasta", "_dna")
-    # to be more explicit
-    name = entry.name[0:-9] + "_dna"
+    name = entry.replace("_aa.fasta", "_dna")
     record = SeqIO.read(entry,'fasta')
+    
     masterlist = []
     bestcai = 0
     curcai = 0
-    z = 0
-    # What's the significance of 100000? Could we give it a descriptive name?
-    while z < 100000:
+    TOTAL_ITERATIONS = 100000
+
+    for curr_iteration in range(0, TOTAL_ITERATIONS):
         codonarr = []
         # Convert amino acid to codons:
         for i in record.seq:
@@ -154,24 +142,13 @@ for entry in os.scandir(aa_dir):
         # With our new codon array, calculate the CAI:
         cai = seq2cai(codonarr)
         if (cai > curcai):
-            bestcai = z
+            bestcai = curr_iteration
             curcai = cai
             print('new best cai ' + str(cai))
-        z += 1
-        print(z)
-
-    # ⬆
-    # Style nit, but it would be more pythonic to write
-    # TOTAL_ITERATIONS = 100000
-    # for curr_iteration in range(0, TOTAL_ITERATIONS):
-    #    ...
+        curr_iteration += 1
+        print(curr_iteration)
 
     # Write the codon array to a file:
     record.seq = Seq(re.sub('[^GATC]',"",str("".join(masterlist[bestcai])).upper()))
     complete_name = os.path.join(out_dir, name)
     SeqIO.write(record, complete_name + ".fasta", "fasta")
-
-stop = timeit.default_timer()
-
-print('Time: ', stop - start)  
-#1:00
