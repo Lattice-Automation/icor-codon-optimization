@@ -115,8 +115,8 @@ output = input(
 while True:
     if output == "Y":
         with open("output.txt", "w") as f:
-        f.write(out_str)
-        print("\nOutput written to output.txt")
+            f.write(out_str)
+            print("\nOutput written to output.txt")
         break
     elif output == "N":
         print("\nNo output written. Done!")
