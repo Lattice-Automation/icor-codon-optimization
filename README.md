@@ -5,7 +5,7 @@
 <p align="center">
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5529209.svg)](https://doi.org/10.5281/zenodo.5529209)
-[![LICENSE](https://img.shields.io/badge/license-none%20(yet)-brightgreen)](https://github.com/Lattice-Automation/icor-codon-optimization/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/Lattice-Automation/icor-codon-optimization/blob/master/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Lattice-Automation/icor-codon-optimization)
 
 </p>
