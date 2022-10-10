@@ -34,11 +34,11 @@ frequency = {
 
 # Amino acid sequence dir to optimize:
 # hardcoded path
-aa_dir = r"..\..\benchmark_sequences\aa"
+aa_dir = os.path.join(os.getcwd(),'benchmark_sequences','aa')
 
 # Output dir to store optimized seqs:
 # hardcoded path
-out_dir = r"..\..\benchmark_sequences\naive"
+out_dir = os.path.join(os.getcwd(),'benchmark_sequences','naive')
 
 
 # Normalize probabilities for frequency if sum is not exactly 1.

@@ -1,5 +1,3 @@
-model_path = r"..\..\tool\models\icor.onnx"
-
 # Import packages
 from Bio.Seq import Seq
 from Bio.Seq import translate
@@ -7,6 +5,10 @@ import sys
 import onnxruntime as rt
 import numpy as np
 from typing import List
+import os
+
+#set path
+model_path = os.path.join(os.getcwd(),'tool','models','icor.onnx')
 
 sequence_type = input("Welcome to ICOR! Are you optimizing an amino acid sequence (enter in 'aa' below) or a dna/codon sequence (enter in 'dna' below)?\n\n").strip().upper()
 input_seq = input(
