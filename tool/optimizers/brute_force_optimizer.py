@@ -13,13 +13,16 @@ import math
 import re
 
 # Set input AA sequence directory and output for writing brute sequences
-aa_dir = os.path.join(os.getcwd(),'benchmark_sequences','aa')
-out_dir = os.path.join(os.getcwd(),'benchmark_sequences','brute')
+aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'brute')
 
 # Define weights for each codon
-weights = [0,1,0.647058823500000,0.500000000000000,0.794117647100000,0.0789473684200000,0.131578947400000,0.263157894700000,0.184210526300000,0.973684210500000,1,0.851851851900000,1,1,0.587301587300000,0.818181818200000,1,0.483870967700000,0.129032258100000,1,1,0.515151515200000,0.470588235300000,1,0.384615384600000,0.307692307700000,0.871794871800000,1,1,0.754385964900000,0.180000000000000,1,0.820000000000000,0.265306122400000,0.265306122400000,1,0.0816326530600000,0.224489795900000,0.204081632700000,0.333333333300000,1,1,1,0.754385964900000,1,0.392156862700000,0.333333333300000,0.235294117600000,0.576923076900000,1,0.576923076900000,0.500000000000000,0.615384615400000,0.576923076900000,0.619047619000000,0.357142857100000,0.428571428600000,1,1,1,0.724137931000000,1,0.444444444400000,0.750000000000000,0.583333333300000]
+weights = [0, 1, 0.647058823500000, 0.500000000000000, 0.794117647100000, 0.0789473684200000, 0.131578947400000, 0.263157894700000, 0.184210526300000, 0.973684210500000, 1, 0.851851851900000, 1, 1, 0.587301587300000, 0.818181818200000, 1, 0.483870967700000, 0.129032258100000, 1, 1, 0.515151515200000, 0.470588235300000, 1, 0.384615384600000, 0.307692307700000, 0.871794871800000, 1, 1, 0.754385964900000, 0.180000000000000, 1, 0.820000000000000,
+           0.265306122400000, 0.265306122400000, 1, 0.0816326530600000, 0.224489795900000, 0.204081632700000, 0.333333333300000, 1, 1, 1, 0.754385964900000, 1, 0.392156862700000, 0.333333333300000, 0.235294117600000, 0.576923076900000, 1, 0.576923076900000, 0.500000000000000, 0.615384615400000, 0.576923076900000, 0.619047619000000, 0.357142857100000, 0.428571428600000, 1, 1, 1, 0.724137931000000, 1, 0.444444444400000, 0.750000000000000, 0.583333333300000]
 
 # Create a list of all the codons and match their corresponding weights
+
+
 def seq2cai(codonarray):
     output = []
     switcher = {
@@ -89,11 +92,12 @@ def seq2cai(codonarray):
         'GTC': 64,
     }
     for codon in codonarray:
-        output.append(weights[switcher.get(codon,0)])
+        output.append(weights[switcher.get(codon, 0)])
     length = 1 / len(codonarray)
     return pow(math.prod(output), length)
 
-def aa2codons(seq : str) -> list:
+
+def aa2codons(seq: str) -> list:
     _aas = {
         "A": ["GCT GCC GCA GCG"],
         "R": ["CGT CGC CGA CGG AGA AGG"],
@@ -121,12 +125,13 @@ def aa2codons(seq : str) -> list:
     }
     return [_aas[i] for i in seq]
 
+
 # Converts an amino acid to a random corresponding codon:
 for entry in os.scandir(aa_dir):
     # Read in the amino acid sequence:
     name = entry.replace("_aa.fasta", "_dna")
-    record = SeqIO.read(entry,'fasta')
-    
+    record = SeqIO.read(entry, 'fasta')
+
     masterlist = []
     bestcai = 0
     curcai = 0
@@ -136,7 +141,7 @@ for entry in os.scandir(aa_dir):
         codonarr = []
         # Convert amino acid to codons:
         for i in record.seq:
-            #Randomly choose a codon from the list of codons for the amino acid:
+            # Randomly choose a codon from the list of codons for the amino acid:
             codonarr.append(random.choice(aa2codons(i)[0][0].split()))
         masterlist.append(codonarr)
         # With our new codon array, calculate the CAI:
@@ -149,6 +154,7 @@ for entry in os.scandir(aa_dir):
         print(curr_iteration)
 
     # Write the codon array to a file:
-    record.seq = Seq(re.sub('[^GATC]',"",str("".join(masterlist[bestcai])).upper()))
+    record.seq = Seq(re.sub('[^GATC]', "", str(
+        "".join(masterlist[bestcai])).upper()))
     complete_name = os.path.join(out_dir, name)
     SeqIO.write(record, complete_name + ".fasta", "fasta")

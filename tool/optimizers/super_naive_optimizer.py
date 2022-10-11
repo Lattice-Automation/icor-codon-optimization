@@ -8,14 +8,16 @@ import re
 from Bio.Seq import Seq
 
 # Amino acid sequence dir to optimize:
-aa_dir = os.path.join(os.getcwd(),'benchmark_sequences','aa')
+aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
 
 
 # Output dir to store optimized seqs:
-out_dir = os.path.join(os.getcwd(),'benchmark_sequences','super_naive')
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'super_naive')
 
 # Amino acid to codon table, outputs arr of codons:
-def aa2codons(seq : str) -> list:
+
+
+def aa2codons(seq: str) -> list:
     _aas = {
         "A": ["GCT GCC GCA GCG"],
         "R": ["CGT CGC CGA CGG AGA AGG"],
@@ -43,19 +45,20 @@ def aa2codons(seq : str) -> list:
     }
     return [_aas[i] for i in seq]
 
+
 # Converts an amino acid to a random corresponding codon:
 for entry in os.scandir(aa_dir):
     # Read in the amino acid sequence:
     name = entry.name[0:-9] + "_dna"
-    record = SeqIO.read(entry,'fasta')
+    record = SeqIO.read(entry, 'fasta')
     arr = []
     # Convert amino acid to codons:
     for i in record.seq:
-        #Randomly choose a codon from the list of codons for the amino acid:
+        # Randomly choose a codon from the list of codons for the amino acid:
         arr.append(random.choice(aa2codons(i)[0][0].split()))
 
     # Convert the array of codons to a string:
-    record.seq = Seq(re.sub('[^GATC]',"",str("".join(arr)).upper()))
+    record.seq = Seq(re.sub('[^GATC]', "", str("".join(arr)).upper()))
     complete_name = os.path.join(out_dir, name)
 
     # Save the super naively optimized DNA sequence:

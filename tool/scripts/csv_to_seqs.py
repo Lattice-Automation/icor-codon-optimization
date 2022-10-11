@@ -16,10 +16,10 @@ import os
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
 
-#output directory to write sequences
+# output directory to write sequences
 out_dir = r"..\..\benchmark_sequences\genscript"
 
-#iterate through the csv file and write sequences to the output directory
+# iterate through the csv file and write sequences to the output directory
 with open('optimum_seqs.csv', newline='') as csvfile:
     data = list(csv.reader(csvfile))
     for i in data:
@@ -31,4 +31,4 @@ with open('optimum_seqs.csv', newline='') as csvfile:
             description="blank",
         )
         print(record)
-        SeqIO.write(record,os.path.join(out_dir, file_name),'fasta')
+        SeqIO.write(record, os.path.join(out_dir, file_name), 'fasta')
