@@ -30,15 +30,23 @@
 In protein sequences—as there are 61 sense codons but only 20 standard amino acids—most amino acids are encoded by more than one codon. Although such synonymous codons do not alter the encoded amino acid sequence, their selection can dramatically affect the production of the resulting protein. Codon optimization of synthetic DNA sequences for maximum expression is an important segment of heterologous expression. However, existing solutions are primarily based on choosing high-frequency codons only, neglecting the important effects of rare codons. In this paper, we propose a novel recurrent-neural-network (RNN) based codon optimization tool, ICOR, that aims to learn codon usage bias on a genomic dataset of Escherichia coli. We compile a dataset of over 42,000 non-redundant, robust genes that are used for deep learning. The model uses a bidirectional long short-term memory-based architecture, allowing for the sequential information of genes to be learnt. Our tool can predict synonymous codons for synthetic genes towards optimal expression in E. coli. We demonstrate that sequential context achieved via RNN may yield codon selection that is more similar to the host genome, therefore improving protein expression more than frequency-based approaches. On a benchmark set of over 40 select DNA sequences, ICOR tool improved the codon adaptation index by 41.69% compared to the original sequence. Our resulting algorithm is provided as an open-source software package along with the benchmark set of sequences.
 
 ### Quickstart
-Quickstart to run install prerequisites and then launch the ICOR optimization script.
+Quickstart to run install prerequisites and then launch the ICOR optimization script. Please use the following commands to use our software.
 
 ```bash
+# Install package
+git clone https://github.com/Lattice-Automation/icor-codon-optimization.git
+
 # Install prereqs
 pip install -r requirements.txt
 
 # Run ICOR optimizer
 python ./tool/optimizers/icor_optimizer.py
 ```
+
+Please ensure that scripts are ran from the base folder `icor-codon-optimization` to take advantage of the relative pathing that we have implemented throughout the codebase.
+
+The ICOR software package was developed on Windows with Python v3.9.4 and Linux Ubuntu with Python v3.8.13.
+Python v3 is the basic requirement, however, newer versions of Python are suggested for compatibility.
 
 ### Assets
 Assets including images and branding for the ICOR tool, hosted on the [biotools by Lattice Automation](https://tools.latticeautomation.com/) website.
