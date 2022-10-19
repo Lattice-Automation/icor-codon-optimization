@@ -38,7 +38,7 @@ aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
 
 # Output dir to store optimized seqs:
 # hardcoded path
-out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'naive')
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'BFC')
 
 
 # Normalize probabilities for frequency if sum is not exactly 1.
@@ -49,7 +49,7 @@ def fix_p(p):
 
 
 for entry in os.scandir(aa_dir):
-    name = entry.replace("_aa.fasta", "_dna")
+    name = entry.name.replace("_aa.fasta", "_dna")
 
     # Replace ambiguities with amino acids from IUPAC guidelines: https://www.bioinformatics.org/sms/iupac.html
     record = SeqIO.read(entry, "fasta")

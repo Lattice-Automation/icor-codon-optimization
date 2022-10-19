@@ -12,7 +12,7 @@ aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
 
 
 # Output dir to store optimized seqs:
-out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'super_naive')
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'URC')
 
 # Amino acid to codon table, outputs arr of codons:
 

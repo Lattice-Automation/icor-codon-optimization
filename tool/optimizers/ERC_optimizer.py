@@ -14,7 +14,7 @@ import re
 
 # Set input AA sequence directory and output for writing brute sequences
 aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
-out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'brute')
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'ERC')
 
 # Define weights for each codon
 weights = [0, 1, 0.647058823500000, 0.500000000000000, 0.794117647100000, 0.0789473684200000, 0.131578947400000, 0.263157894700000, 0.184210526300000, 0.973684210500000, 1, 0.851851851900000, 1, 1, 0.587301587300000, 0.818181818200000, 1, 0.483870967700000, 0.129032258100000, 1, 1, 0.515151515200000, 0.470588235300000, 1, 0.384615384600000, 0.307692307700000, 0.871794871800000, 1, 1, 0.754385964900000, 0.180000000000000, 1, 0.820000000000000,
@@ -129,7 +129,7 @@ def aa2codons(seq: str) -> list:
 # Converts an amino acid to a random corresponding codon:
 for entry in os.scandir(aa_dir):
     # Read in the amino acid sequence:
-    name = entry.replace("_aa.fasta", "_dna")
+    name = entry.name.replace("_aa.fasta", "_dna")
     record = SeqIO.read(entry, 'fasta')
 
     masterlist = []

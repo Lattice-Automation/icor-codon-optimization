@@ -38,18 +38,10 @@ aa_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'aa')
 
 # Output dir to store optimized seqs:
 # hardcoded path
-out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'naive')
-
-
-# Normalize probabilities for frequency if sum is not exactly 1.
-def fix_p(p):
-    if p.sum() != 1.0:
-        p = p*(1./p.sum())
-    return p
-
+out_dir = os.path.join(os.getcwd(), 'benchmark_sequences', 'HFC')
 
 for entry in os.scandir(aa_dir):
-    name = entry.replace("_aa.fasta", "_dna")
+    name = entry.name.replace("_aa.fasta", "_dna")
 
     # Replace ambiguities with amino acids from IUPAC guidelines: https://www.bioinformatics.org/sms/iupac.html
     record = SeqIO.read(entry, "fasta")
@@ -58,8 +50,7 @@ for entry in os.scandir(aa_dir):
     seq_arr = []
     for aa in seq:
         # append to the array a random choice of codon using the probabilities given (p)
-        seq_arr.append(np.random.choice(
-            frequency[aa][0], p=fix_p(np.asarray(frequency[aa][1]))))
+        seq_arr.append(frequency[aa][0][np.argmax(frequency[aa][1])])
 
     record.seq = Seq(re.sub('[^GATC]', "", str("".join(seq_arr)).upper()))
     complete_name = os.path.join(out_dir, name)
