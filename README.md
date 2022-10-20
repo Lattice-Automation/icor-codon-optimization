@@ -57,6 +57,7 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 - `icor_benchmarks` which consists of the benchmark results for the ICOR optimized sequences.
 - `BFC_benchmarks` which consists of the benchmark results for the background frequency choice (BFC) optimized sequences.
 - `original_benchmarks` which consists of the benchmark results for the original, unoptimized sequences.
+- `HFC_benchmarks` which consists of the benchmark results for the highest frequency choice (HFC) optimized sequences.
 - `URC_benchmarks` which consists of the benchmark results for the uniform random choice (URC) optimized sequences.
 - `genscript_benchmarks` which consists of the benchmark results for the [Genscript Gensmart™](https://www.genscript.com/gensmart-free-gene-codon-optimization.html) optimized sequences.
 
@@ -68,7 +69,8 @@ Assets including images and branding for the ICOR tool, hosted on the [biotools 
 - `dna` which consists of the 40 original DNA sequences.
 - `icor` which consists of 40 DNA sequences optimized by the ICOR optimizer.
 - `BFC` which consists of 40 DNA sequences optimized by the BFC optimizer.
-- `URC`  consists of 40 DNA sequences optimized by the URC optimizer.
+- `URC` which consists of 40 DNA sequences optimized by the URC optimizer.
+- `HFC` which consists of 40 DNA sequences optimzied by the HFC optimizer.
 - `genscript` consists of 40 DNA sequences optimized by the [Genscript Gensmart™](https://www.genscript.com/gensmart-free-gene-codon-optimization.html) tool.
 
 ### Tool
@@ -97,6 +99,9 @@ The ICOR model was trained in the MATLAB environment. For more details on model 
   
 `URC_optimizer.py`
 > Uniform random choice optimizer creates a directory containing amino acid sequences in the FASTA format and saves these "optimized" / "generated" DNA sequences in a directory. It randomly selects a codon given an amino acid, making it a very naive approach.
+
+`HFC_optimizer.py`
+> Chooses the highest frequency codon in E. coli only, having just one codon for every amino acid. This approach should have a CAI of 1.0. Creates a directory containing amino acid sequences in the FASTA format and saves the sequences into this directory. 
 
 #### Scripts
 The following is a description of the purpose for each script in the repository.
