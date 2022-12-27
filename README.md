@@ -24,6 +24,7 @@
   - [Scripts](#Scripts)
   - [Resources](#Resources)
 - [Dependencies](#Dependencies)
+- [Training](#Training)
 ---
 
 ### About
@@ -137,6 +138,10 @@ The following is a description of the purpose for each resource in the resources
   
 `ecoli_codon_frequencies.csv`
 > Contains the codon frequency weights for each codon/amino acid used in the E. coli genomes. The naive tool was built upon these frequencies.
+
+### Training
+Please refer to the training directory for scripts/code regarding the training of the ICOR neural network.
+The full dataset as described in our paper is also given in this directory.
 
 ### Dependencies
 - Python 3.9.4
