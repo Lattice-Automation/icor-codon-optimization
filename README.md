@@ -38,11 +38,12 @@ Quickstart to run install prerequisites and then launch the ICOR optimization sc
 git clone https://github.com/Lattice-Automation/icor-codon-optimization.git
 
 # Install prereqs
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Run ICOR optimizer
-python ./tool/optimizers/icor_optimizer.py
+python3 ./tool/optimizers/icor_optimizer.py
 ```
+Note: ICOR does not support Apple M1/M2 Silicon. This is because Microsoft's onnxruntime does not have support for M1 yet. ICOR should work fine for other MacOSX versions, and of course, Linux & Windows.
 
 Please ensure that scripts are ran from the base folder `icor-codon-optimization` to take advantage of the relative pathing that we have implemented throughout the codebase.
 
