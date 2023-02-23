@@ -1,4 +1,5 @@
 Bio
+biopython
 numpy
 onnxruntime==1.12.0
 selenium
