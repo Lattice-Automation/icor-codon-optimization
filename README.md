@@ -12,6 +12,8 @@
 
 <h3 align="center"> ICOR: Improving Codon Optimization with Recurrent neural networks <h3>
 
+Our Publication in BMC Bioinformatics: https://doi.org/10.1186/s12859-023-05246-8
+  
 ---
 - [About](#About)
 - [Quickstart](#Quickstart)
